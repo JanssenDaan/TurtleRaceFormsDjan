@@ -8,5 +8,12 @@ namespace TurtleRaceFormsDjan
 {
     public class Racer
     {
+        public string NameDjan { get; set; }
+        public int LabcountDjan { get; set; }
+        public int RacetimeDjan { get; set; }
+        public int RandomValueDjan { get; set; }
+
+
+       
     }
 }

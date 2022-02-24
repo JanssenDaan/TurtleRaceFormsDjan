@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCurrentSpeedDjan = new System.Windows.Forms.Label();
             this.lblRaceTimeDjan = new System.Windows.Forms.Label();
             this.lblLapsFinishedDjan = new System.Windows.Forms.Label();
@@ -37,10 +38,11 @@
             this.gbxValues = new System.Windows.Forms.GroupBox();
             this.btnStartDjan = new System.Windows.Forms.Button();
             this.btnResetDjan = new System.Windows.Forms.Button();
-            this.btnPictureBox = new System.Windows.Forms.PictureBox();
+            this.pcbTurtleDjan = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tmrDjan = new System.Windows.Forms.Timer(this.components);
             this.gbxValues.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTurtleDjan)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCurrentSpeedDjan
@@ -130,17 +132,18 @@
             this.btnResetDjan.TabIndex = 8;
             this.btnResetDjan.Text = "Reset";
             this.btnResetDjan.UseVisualStyleBackColor = true;
+            this.btnResetDjan.Click += new System.EventHandler(this.btnResetDjan_Click);
             // 
-            // btnPictureBox
+            // pcbTurtleDjan
             // 
-            this.btnPictureBox.BackgroundImage = global::TurtleRaceFormsDjan.Properties.Resources.turtle;
-            this.btnPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPictureBox.Image = global::TurtleRaceFormsDjan.Properties.Resources.turtle;
-            this.btnPictureBox.Location = new System.Drawing.Point(12, 170);
-            this.btnPictureBox.Name = "btnPictureBox";
-            this.btnPictureBox.Size = new System.Drawing.Size(135, 127);
-            this.btnPictureBox.TabIndex = 9;
-            this.btnPictureBox.TabStop = false;
+            this.pcbTurtleDjan.BackgroundImage = global::TurtleRaceFormsDjan.Properties.Resources.turtle;
+            this.pcbTurtleDjan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbTurtleDjan.Image = global::TurtleRaceFormsDjan.Properties.Resources.turtle;
+            this.pcbTurtleDjan.Location = new System.Drawing.Point(12, 170);
+            this.pcbTurtleDjan.Name = "pcbTurtleDjan";
+            this.pcbTurtleDjan.Size = new System.Drawing.Size(135, 127);
+            this.pcbTurtleDjan.TabIndex = 9;
+            this.pcbTurtleDjan.TabStop = false;
             // 
             // richTextBox1
             // 
@@ -150,13 +153,18 @@
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
+            // tmrDjan
+            // 
+            this.tmrDjan.Interval = 10;
+            this.tmrDjan.Tick += new System.EventHandler(this.tmrDjan_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.btnPictureBox);
+            this.Controls.Add(this.pcbTurtleDjan);
             this.Controls.Add(this.btnResetDjan);
             this.Controls.Add(this.btnStartDjan);
             this.Controls.Add(this.gbxValues);
@@ -165,7 +173,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxValues.ResumeLayout(false);
             this.gbxValues.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTurtleDjan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +189,8 @@
         private GroupBox gbxValues;
         private Button btnStartDjan;
         private Button btnResetDjan;
-        private PictureBox btnPictureBox;
+        private PictureBox pcbTurtleDjan;
         private RichTextBox richTextBox1;
+        private System.Windows.Forms.Timer tmrDjan;
     }
 }
